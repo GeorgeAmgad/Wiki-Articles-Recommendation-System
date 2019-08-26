@@ -66,11 +66,11 @@ articles = articles.head(100) # number of articles to use , we use 100 out of ab
 
 # Get text to clean
 text_to_clean = list(articles['articles'])
-globals.original_text = text_to_clean.copy()
+globals.original_text_train = text_to_clean.copy()
 
 # Clean text
 cleaned_text = apply_cleaning_function_to_list(text_to_clean)
-globals.cleaned_text = cleaned_text.copy()
+globals.cleaned_text_train = cleaned_text.copy()
 
 # Show first example
 print('Original text:', text_to_clean[0])

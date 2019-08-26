@@ -1,2 +1,2 @@
-original_text = []
-cleaned_text = []
+original_text_train = []
+cleaned_text_train = []
