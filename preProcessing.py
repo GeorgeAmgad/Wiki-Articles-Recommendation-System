@@ -62,8 +62,7 @@ articles = pd.read_csv('train.csv')
 
 # Truncate data for example
 articles = articles.head(100)  # number of articles to use , we use 100 out of about 700
-# imdb = imdb["articles"]
-# print(imdb)
+
 
 # Get text to clean
 text_to_clean = list(articles['articles'])
