@@ -2,3 +2,5 @@
 # to be executed across files
 import preProcessing
 import globals as g
+import TF_IDF
+import word2vec

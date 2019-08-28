@@ -44,7 +44,7 @@ def clean_text(raw_text):
     stemmed_words = [stemming.stem(w) for w in token_words]
 
     # Remove stop words
-    meaningful_words = [w for w in stemmed_words if not w in stops]
+    meaningful_words = [w for w in stemmed_words if w not in stops]
 
     # Rejoin meaningful stemmed words
     joined_words = (" ".join(meaningful_words))
