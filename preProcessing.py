@@ -1,10 +1,13 @@
-import globals
 import nltk
 import pandas as pd
-from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+
+import globals
+
 # all are less than 700 article
 # If not previously performed:
+# nltk.download('punkt')
 # nltk.download('stopwords')
 
 stemming = PorterStemmer()
@@ -57,12 +60,10 @@ def clean_text(raw_text):
 
 articles = pd.read_csv('train.csv')
 
-
-
 # Truncate data for example
-articles = articles.head(100) # number of articles to use , we use 100 out of about 700
-#imdb = imdb["articles"]
-#print(imdb)
+articles = articles.head(100)  # number of articles to use , we use 100 out of about 700
+# imdb = imdb["articles"]
+# print(imdb)
 
 # Get text to clean
 text_to_clean = list(articles['articles'])
@@ -73,9 +74,8 @@ cleaned_text = apply_cleaning_function_to_list(text_to_clean)
 globals.cleaned_text_train = cleaned_text.copy()
 
 # Show first example
-print('Original text:', text_to_clean[0])
-print('\nCleaned text:', cleaned_text[0])
-
+# print('Original text:', text_to_clean[0])
+# print('\nCleaned text:', cleaned_text[0])
 
 # Add cleaned data back into DataFrame
 articles['cleaned_review'] = cleaned_text
