@@ -61,8 +61,18 @@ def clean_text(raw_text):
 articles = pd.read_csv('train.csv')
 
 # Truncate data for example
-articles = articles.head(100)  # number of articles to use , we use 100 out of about 700
-
+articles = articles.head(101)  # number of articles to use , we use 100 out of about 700
+title = input("Enter a title to search : ")
+title=title+" "
+index = 0
+c = 0
+for art in articles["articles"]:
+    art_split = art.split("= ")
+    if art_split[1] == title:
+        index = c
+        break
+    c += 1
+globals.index = index
 
 # Get text to clean
 text_to_clean = list(articles['articles'])
@@ -78,3 +88,4 @@ globals.cleaned_text_train = cleaned_text.copy()
 
 # Add cleaned data back into DataFrame
 articles['cleaned_review'] = cleaned_text
+
