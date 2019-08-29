@@ -10,6 +10,7 @@ X = g.vectors
 K = 35
 print(X.__len__())
 
+
 def NormalizeData(data):
     return (data - np.min(data)) / (np.max(data) - np.min(data))
 
